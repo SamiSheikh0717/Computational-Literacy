@@ -1,0 +1,76 @@
+ACTIVITY NAME: Molecular Polarity and Electrostatic Potential
+
+GOALS
+
+By completing this activity, students will:
+
+- Represent atomic positions and partial charges numerically.
+- Calculate atomic contributions to a molecular dipole.
+- Determine the magnitude of a molecular dipole.
+- Calculate an electrostatic potential across a two-dimensional grid.
+- Visualize molecular electrostatic potential using Python.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity investigates molecular polarity by combining atomic positions with partial charges.
+
+The program uses a two-dimensional representation of an H2O molecule. Each atom is assigned a position and a partial charge. The charge and position of each atom are then used to calculate its contribution to the molecular dipole.
+
+The program adds the individual contributions together to obtain the molecular dipole vector and calculates its magnitude.
+
+The second part of the activity calculates an approximate electrostatic potential over a two-dimensional grid surrounding the molecule. The resulting values are displayed as a contour map, providing a visual representation of the molecule's electrostatic environment.
+
+EXPLANATION OF NEW CODE
+
+The activity introduces two-dimensional NumPy coordinate arrays:
+
+oxygen = np.array([0.000, 0.000])
+hydrogen1 = np.array([0.758, 0.504])
+hydrogen2 = np.array([-0.758, 0.504])
+
+Partial charges are stored as numerical variables:
+
+q_oxygen = -0.84
+q_hydrogen1 = 0.42
+q_hydrogen2 = 0.42
+
+A new function calculates an individual dipole contribution:
+
+def dipole_component(position, charge):
+    return position * charge
+
+The contributions from the individual atoms are then added together to obtain the molecular dipole.
+
+The magnitude of the resulting vector is calculated using:
+
+dipole_magnitude = np.linalg.norm(dipole)
+
+The activity then introduces a more complex function for calculating electrostatic potential:
+
+def electrostatic_potential(x, y, positions, charges):
+
+The function loops through each atomic position and charge using:
+
+for position, charge in zip(positions, charges):
+
+For every grid point, it calculates the distance from the atomic charge and uses that distance to determine the charge's contribution to the electrostatic potential.
+
+The program also introduces np.linspace() and np.meshgrid():
+
+x = np.linspace(-3, 3, 300)
+y = np.linspace(-3, 3, 300)
+
+X, Y = np.meshgrid(x, y)
+
+These create a two-dimensional grid of points where the electrostatic potential is calculated.
+
+Finally, Matplotlib's contourf() function is used to create the electrostatic-potential map:
+
+contour = plt.contourf(
+    X,
+    Y,
+    potential,
+    levels=50
+)
+
+This converts the numerical electrostatic-potential data into a visual representation of the molecule's charge environment.
