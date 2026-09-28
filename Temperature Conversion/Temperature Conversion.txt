@@ -1,0 +1,47 @@
+ACTIVITY NAME: Temperature Conversion
+
+GOALS
+
+By completing this activity, students will:
+
+- Define a Python function.
+- Pass information into a function using an argument.
+- Use return to produce a calculated result.
+- Perform a Celsius-to-Kelvin conversion.
+- Apply the same function to multiple values.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity builds on the use of variables by introducing functions. Functions allow a calculation to be defined once and then reused with different inputs.
+
+The program stores a temperature in the variable temperature. It then passes that temperature into a function that performs a Celsius-to-Kelvin conversion.
+
+The program also demonstrates that the same function can be used with a completely different temperature without rewriting the calculation.
+
+EXPLANATION OF NEW CODE
+
+The major new concept is the function:
+
+def celcius_conversion(t):
+
+def tells Python that a new function is being created. celcius_conversion is the function's name, while t is the parameter that will contain the input value.
+
+The function performs the conversion using:
+
+return t + 273
+
+return sends the calculated result back to the part of the program that called the function.
+
+The function is then called using:
+
+print(celcius_conversion(temperature))
+
+Here, the value stored in temperature is supplied as the function's argument.
+
+The program also demonstrates that a different value can be supplied directly:
+
+print(celcius_conversion(9203))
+
+The function does not need to be rewritten. Only the input changes.
+
+This introduces the idea of reusable computational procedures, which becomes increasingly important as chemistry calculations become more complicated.
