@@ -1,0 +1,68 @@
+ACTIVITY NAME: Rotational Energy Scan
+
+GOALS
+
+By completing this activity, students will:
+
+- Analyze how molecular energy changes with rotational angle.
+- Calculate relative energy from quantum-chemical energies.
+- Convert energy differences from Hartrees to kcal/mol.
+- Identify the lowest-energy conformation.
+- Create a graph of molecular energy versus rotational angle.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity examines how the energy of a molecule changes as a bond or molecular group is rotated.
+
+The program contains a series of rotational angles and corresponding quantum-chemical energies. These energies represent calculations that could be obtained from a series of WebMO or Spartan calculations.
+
+Because absolute quantum-chemical energies are large negative numbers, the program converts them into relative energies. The minimum energy is identified, and all other energies are expressed relative to that minimum.
+
+The program then determines the rotational angle corresponding to the minimum energy and creates a graph showing the energy landscape.
+
+EXPLANATION OF NEW CODE
+
+The activity introduces NumPy arrays for storing multiple values:
+
+angles = np.array([...])
+energies = np.array([...])
+
+This allows the entire set of rotational angles and energies to be manipulated computationally.
+
+The minimum energy is found using:
+
+minimum_energy = np.min(energies)
+
+The program then calculates relative energy:
+
+relative_energy = energies - minimum_energy
+
+This subtracts the lowest energy from every energy in the array.
+
+The relative energies are converted into kcal/mol:
+
+relative_energy_kcal = relative_energy * 627.509
+
+The program then finds the position of the minimum energy:
+
+minimum_index = np.argmin(energies)
+
+The corresponding angle is obtained using:
+
+minimum_angle = angles[minimum_index]
+
+The activity also introduces a for loop:
+
+for i in range(len(angles)):
+
+The loop allows the program to print every angle, energy, and relative energy without manually writing a separate print() statement for every data point.
+
+Finally, Matplotlib is introduced:
+
+import matplotlib.pyplot as plt
+
+The program uses:
+
+plt.plot(angles, relative_energy_kcal, marker="o")
+
+to visualize the relationship between rotational angle and relative energy.
