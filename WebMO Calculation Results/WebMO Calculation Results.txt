@@ -1,0 +1,54 @@
+ACTIVITY NAME: WebMO Calculation Results
+
+GOALS
+
+By completing this activity, students will:
+
+- Record numerical output from a WebMO calculation.
+- Convert energy from Hartrees to kJ/mol and kcal/mol.
+- Calculate the magnitude of a molecular dipole moment.
+- Use Python functions for scientific calculations.
+- Process computational chemistry output into chemically meaningful quantities.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity takes the next step after obtaining results from a WebMO calculation.
+
+The program stores the molecule, charge, multiplicity, calculated energy, and three components of the molecular dipole moment.
+
+Python then converts the calculated energy from Hartrees into kJ/mol and kcal/mol. The program also uses the three dipole components to calculate the magnitude of the molecular dipole moment.
+
+This demonstrates how Python can be used to process raw output from computational chemistry software rather than simply displaying the original values.
+
+EXPLANATION OF NEW CODE
+
+The program introduces the math module:
+
+import math
+
+This provides mathematical functions, including math.sqrt().
+
+Several functions are introduced for unit conversion:
+
+def hartree_to_kj(energy):
+    return energy * 2625.50
+
+def hartree_to_kcal(energy):
+    return energy * 627.509
+
+These functions take an energy in Hartrees and convert it into different energy units.
+
+The program also introduces a function for calculating dipole magnitude:
+
+def calculate_dipole(x, y, z):
+    return math.sqrt(x**2 + y**2 + z**2)
+
+This uses the three Cartesian components of the dipole moment and applies the vector-magnitude relationship.
+
+The calculated values are stored in new variables:
+
+energy_kj = hartree_to_kj(energy_hartree)
+energy_kcal = hartree_to_kcal(energy_hartree)
+dipole = calculate_dipole(dx, dy, dz)
+
+This demonstrates how functions can be chained together to process scientific data.
