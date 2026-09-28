@@ -1,0 +1,54 @@
+ACTIVITY NAME: Dimensional Analysis
+
+GOALS
+
+By completing this activity, students will:
+
+- Use Python functions to perform unit conversions.
+- Apply dimensional-analysis relationships computationally.
+- Use user input in a Python program.
+- Convert a quantity through multiple units.
+- Understand how several functions can be combined into one calculation.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity applies dimensional analysis to a sequence of unit conversions.
+
+The user enters a distance in kilometers. Python then converts the distance from kilometers to meters, meters to centimeters, and centimeters to millimeters.
+
+The calculation is separated into individual functions so that each function performs one specific conversion. This demonstrates how a larger scientific calculation can be divided into smaller computational steps.
+
+The activity connects a familiar chemistry calculation method, dimensional analysis, to programming.
+
+EXPLANATION OF NEW CODE
+
+The first new concept is creating multiple conversion functions:
+
+def km_to_m(km):
+    return km * 1000
+
+This function receives a value in kilometers and returns the equivalent value in meters.
+
+Two additional functions perform the next conversions:
+
+def m_to_cm(m):
+    return m * 100
+
+def cm_to_mm(cm):
+    return cm * 10
+
+The activity also introduces user input:
+
+distance_km = float(input("Enter a distance in kilometers: "))
+
+input() allows the user to enter a value while the program is running. Because input() initially returns the information as text, float() converts the entered value into a numerical value that can be used in calculations.
+
+The functions are then connected together:
+
+distance_m = km_to_m(distance_km)
+distance_cm = m_to_cm(distance_m)
+distance_mm = cm_to_mm(distance_cm)
+
+The output of one function becomes the input of the next function.
+
+This is an important computational concept because complex scientific calculations can be constructed by combining smaller, independently defined operations.
