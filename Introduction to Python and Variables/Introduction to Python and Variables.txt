@@ -1,0 +1,39 @@
+ACTIVITY NAME: Introduction to Python and Variables
+
+GOALS
+
+By completing this activity, students will:
+
+- Create variables in Python.
+- Store numerical values in variables.
+- Use print() to display information stored in variables.
+- Understand how variables can be used throughout a program.
+- Become familiar with basic Python syntax and variable naming.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity introduces the basic structure of Python programming through the use of variables. Variables allow information to be stored under a name so that it can be accessed and used later in a program.
+
+The program creates three variables representing chemistry-related quantities: temperature, mass, and volume. Each variable is assigned a numerical value. The program then uses the print() function to display each stored value.
+
+The activity demonstrates a fundamental concept in computational chemistry: experimental and calculated quantities can be stored as variables and then used in later calculations. This allows Python to manipulate chemical data rather than requiring every calculation to be performed manually.
+
+EXPLANATION OF NEW CODE
+
+The first new concept is variable assignment:
+
+temperature = 0.25
+mass = 25.3
+volume = 2.0
+
+The = operator assigns a value to a variable. For example, mass = 25.3 stores the value 25.3 under the variable name mass.
+
+The next new concept is the print() function:
+
+print(volume)
+print(mass)
+print(temperature)
+
+print() displays the value stored in a variable in the output. The variable name is placed inside the parentheses so Python knows which value to display.
+
+The activity also introduces the importance of descriptive variable names. Names such as temperature, mass, and volume make it clear what each number represents.
