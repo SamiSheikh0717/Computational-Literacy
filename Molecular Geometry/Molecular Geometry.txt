@@ -1,0 +1,73 @@
+ACTIVITY NAME: Molecular Geometry
+
+GOALS
+
+By completing this activity, students will:
+
+- Represent molecular coordinates using NumPy arrays.
+- Calculate bond lengths from Cartesian coordinates.
+- Calculate bond angles using vectors and the dot product.
+- Use NumPy mathematical functions.
+- Connect computational coordinates with molecular structure.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity uses Cartesian coordinates to calculate the geometry of an H2O molecule.
+
+Each atom is represented by its x, y, and z coordinates in three-dimensional space. The program uses these coordinates to calculate the two O-H bond lengths and the H-O-H bond angle.
+
+The calculated geometry demonstrates how molecular structure can be obtained quantitatively from numerical coordinates. These same types of coordinates can be obtained from computational chemistry programs such as WebMO or Spartan.
+
+The activity also calculates the total number of valence electrons in H2O, connecting the computational geometry to Lewis-structure analysis.
+
+EXPLANATION OF NEW CODE
+
+The first major new addition is NumPy:
+
+import numpy as np
+
+NumPy provides tools for numerical calculations and allows coordinates to be represented as arrays.
+
+The molecular coordinates are stored as:
+
+coordinates = np.array([
+    [0.0000,  0.0000,  0.0000],
+    [0.7586,  0.0000,  0.5043],
+    [-0.7586, 0.0000, 0.5043]
+])
+
+Each row represents an atom, while the three values in each row represent its x, y, and z coordinates.
+
+A new function calculates bond length:
+
+def bond_length(atom1, atom2):
+    vector = atom2 - atom1
+    return np.linalg.norm(vector)
+
+Subtracting the coordinates produces a vector between the atoms. np.linalg.norm() calculates the magnitude of that vector, giving the bond length.
+
+The activity then introduces the calculation of a bond angle:
+
+def bond_angle(atom1, center, atom2):
+
+Two vectors are created from the central atom:
+
+vector1 = atom1 - center
+vector2 = atom2 - center
+
+The dot product is calculated using:
+
+dot_product = np.dot(vector1, vector2)
+
+The angle is then obtained using np.arccos() and converted from radians to degrees using np.degrees().
+
+The program also uses np.clip() to prevent small numerical errors from producing an invalid value outside the allowed range for arccos.
+
+Finally, a dictionary is introduced for storing valence-electron information:
+
+valence_electrons = {
+    "H": 1,
+    "O": 6
+}
+
+This allows the program to retrieve the number of valence electrons associated with each element.
