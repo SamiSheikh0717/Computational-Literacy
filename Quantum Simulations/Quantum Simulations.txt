@@ -1,0 +1,45 @@
+ACTIVITY NAME: Quantum Simulations
+
+GOALS
+
+By completing this activity, students will:
+
+- Identify the basic information required for a quantum-chemical calculation.
+- Record a molecule, computational method, and basis set.
+- Record the calculated energy of a molecule.
+- Understand the role of WebMO and Spartan in computational chemistry.
+- Organize computational chemistry information using Python.
+
+EXPLANATION OF THE ACTIVITY
+
+This activity introduces the information involved in setting up a quantum-chemical calculation using WebMO or Spartan.
+
+Students identify the molecule being studied and record the computational method and basis set used in the calculation. After the calculation has been completed, the calculated molecular energy is also recorded.
+
+The purpose of this activity is to establish the connection between computational chemistry software and Python. WebMO or Spartan performs the quantum-chemical calculation, while Python is used here to organize the information associated with that calculation.
+
+EXPLANATION OF NEW CODE
+
+The program introduces several variables for storing information:
+
+molecule = "H2O"
+method = "ENTER METHOD"
+basis_set = "ENTER BASIS SET"
+
+Unlike the numerical variables used in earlier activities, these variables contain strings, which are pieces of text.
+
+The program then displays these values:
+
+print("Molecule:", molecule)
+print("Computational Method:", method)
+print("Basis Set:", basis_set)
+
+This demonstrates that Python variables can store both numerical and textual information.
+
+The program also introduces a placeholder for a calculated energy:
+
+energy = 0.0
+
+The user replaces 0.0 with the energy obtained from the WebMO or Spartan calculation.
+
+This activity therefore extends the earlier variable concepts into a computational chemistry workflow.
